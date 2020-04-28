@@ -10,7 +10,7 @@
         <!--Profile View Controller-->
         <scene sceneID="yqh-2x-Hxo">
             <objects>
-                <viewController id="58n-zJ-E20" customClass="ProfileViewController" customModule="View_Controller_Lyfecycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="58n-zJ-E20" customClass="ProfileViewController" customModule="View_Controller_Lyfecycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XLS-Ao-m8L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,9 +94,11 @@
                         <outlet property="firstnameTextField" destination="YAj-ID-nwm" id="LJ2-2c-tSb"/>
                         <outlet property="lastnameTextField" destination="kS8-nm-vTg" id="P9m-dq-tNB"/>
                         <outlet property="photoImageView" destination="8BX-nN-paw" id="EQ2-TB-eus"/>
+                        <segue destination="WbH-Ub-zJz" kind="unwind" identifier="backToFirstScreen" unwindAction="unwindSegueWithSegue:" id="mwP-BX-hk4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhZ-2g-WJX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="WbH-Ub-zJz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2816" y="-183"/>
         </scene>
@@ -129,7 +131,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4i8-3P-EMH">
                                         <rect key="frame" x="0.0" y="210" width="354" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvg-HS-L5N">
                                         <rect key="frame" x="0.0" y="280" width="354" height="50"/>
@@ -140,6 +142,9 @@
                                         <state key="normal" title="Зарегистрироваться">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="58n-zJ-E20" kind="show" identifier="registerId" id="ucD-3D-605"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

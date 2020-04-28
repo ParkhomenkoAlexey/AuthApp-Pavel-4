@@ -26,7 +26,40 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func photoButtonPressed(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch segue.identifier {
+        case "registerId":
+            guard let dvc = segue.destination as? ProfileViewController else { return }
+            dvc.firstname = firstNameTextField.text
+            dvc.lastname = lastNameTextField.text
+            dvc.image = photoImageView.image
+        case "anotherId":
+            print("123")
+        default:
+            break
+        }
+    }
+    
+    @IBAction func unwindSegue (segue: UIStoryboardSegue) {
+        guard let svc = segue.source as? ProfileViewController else { return }
+        firstNameTextField.text = svc.firstnameTextField.text
+        lastNameTextField.text = svc.lastnameTextField.text
+    }
+}
+
+extension SignUpViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        photoImageView.image = image
+    }
 }
 
