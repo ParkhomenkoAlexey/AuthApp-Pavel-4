@@ -24,11 +24,21 @@ class ProfileViewController: UIViewController {
         lastnameTextField.text = lastname
         photoImageView.image = image
     }
+
     
     @IBAction func changeInfoTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "backToFirstScreen", sender: nil)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func shareTapped(_ sender: UIButton) {
+        let items = ["1. Купить молоко\n2. Яблоко"]
+        guard let image = photoImageView.image else { return }
+        let shareController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        
+        present(shareController, animated: true, completion: nil)
     }
 }
