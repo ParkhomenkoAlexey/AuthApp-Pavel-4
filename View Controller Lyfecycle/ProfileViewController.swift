@@ -17,17 +17,23 @@ class ProfileViewController: UIViewController {
     var firstname: String?
     var lastname: String?
     var image: UIImage?
+    var signUpViewController: SignUpViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstnameTextField.text = firstname
-        lastnameTextField.text = lastname
-        photoImageView.image = image
+        
+        if signUpViewController != nil {
+            firstnameTextField.text = firstname
+            lastnameTextField.text = lastname
+            photoImageView.image = image
+        }
     }
 
-    
     @IBAction func changeInfoTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "backToFirstScreen", sender: nil)
+//        performSegue(withIdentifier: "backToFirstScreen", sender: nil)
+        if signUpViewController != nil {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -36,27 +36,37 @@ class SignUpViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        switch segue.identifier {
-        case "registerId":
-            guard let dvc = segue.destination as? ProfileViewController else { return }
-            dvc.firstname = firstNameTextField.text
-            dvc.lastname = lastNameTextField.text
-            dvc.image = photoImageView.image
-        case "anotherId":
-            print("123")
-        default:
-            break
-        }
+    @IBAction func registerTapped(_ sender: UIButton) {
+        guard let profileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profileVC") as? ProfileViewController else { return }
+        profileVC.signUpViewController = self
+        profileVC.firstname = firstNameTextField.text
+        profileVC.lastname = lastNameTextField.text
+        profileVC.image = photoImageView.image
+        present(profileVC, animated: true, completion: nil)
     }
     
-    @IBAction func unwindSegue (segue: UIStoryboardSegue) {
-        guard let svc = segue.source as? ProfileViewController else { return }
-        firstNameTextField.text = svc.firstnameTextField.text
-        lastNameTextField.text = svc.lastnameTextField.text
-    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//        
+//        switch segue.identifier {
+//        case "registerId":
+//            guard let dvc = segue.destination as? ProfileViewController else { return }
+//            dvc.firstname = firstNameTextField.text
+//            dvc.lastname = lastNameTextField.text
+//            dvc.image = photoImageView.image
+//        case "anotherId":
+//            print("123")
+//        default:
+//            break
+//        }
+//    }
+//    
+//    @IBAction func unwindSegue (segue: UIStoryboardSegue) {
+//        guard let svc = segue.source as? ProfileViewController else { return }
+//        firstNameTextField.text = svc.firstnameTextField.text
+//        lastNameTextField.text = svc.lastnameTextField.text
+//    }
 }
 
 extension SignUpViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
