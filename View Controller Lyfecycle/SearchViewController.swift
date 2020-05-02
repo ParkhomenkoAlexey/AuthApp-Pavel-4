@@ -12,8 +12,6 @@ class SearchViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     let tableView = UITableView(frame: .zero, style: .plain)
-    let redView = UIView()
-    let blueView = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +38,6 @@ extension SearchViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        redView.backgroundColor = .red
-//        redView.translatesAutoresizingMaskIntoConstraints = false
-        
-        blueView.backgroundColor = .systemBlue
-//        blueView.translatesAutoresizingMaskIntoConstraints = false
     }
 }
 
@@ -52,23 +45,13 @@ extension SearchViewController {
 extension SearchViewController {
     func setupConstraints() {
         
-        let label = UILabel()
-        label.text = "ferfgjirjfiogjrt ghrtiogjrtg ghrtoigrtigojrtg ghrtoigrtigojrtg ghrtoigrtigojrtg ghrtoigrtigojrtgghrtoigrtigojrtg ferfgjirjfiogjrtferfgjirjfiogjrt ferfgjirjfiogjrt"
-        label.numberOfLines = 0
-        
-        redView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        redView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        let stackView = UIStackView(arrangedSubviews: [redView, label])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.spacing = 10
-        
-        view.addSubview(stackView)
+        view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
     }
