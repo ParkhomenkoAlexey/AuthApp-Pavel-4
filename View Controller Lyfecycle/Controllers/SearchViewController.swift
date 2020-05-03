@@ -12,32 +12,34 @@ class SearchViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     let tableView = UITableView(frame: .zero, style: .plain)
+    let networkDataFetcher = NetworkDataFetcher()
+    var searchResponse: SearchResponse? = nil
+    var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
-        title = "Search"
         setupSearchBar()
         setupElements()
         setupConstraints()
     }
     
     func setupSearchBar() {
-        
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
-//        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
     }
-    
 }
 
 // MARK: - Setup Views
 extension SearchViewController {
     func setupElements() {
+        view.backgroundColor = .white
+        title = "Search"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 }
 
@@ -53,13 +55,38 @@ extension SearchViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        
     }
 }
 
-// MARK: - UISearchBarDelegate
+// MARK: - UITableViewDelegate, UITableViewDataSource
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchResponse?.results.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let track = searchResponse?.results[indexPath.row]
+        cell.textLabel?.text = track?.trackName
+        return cell
+    }
+}
+
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+        let urlString = "https://itunes.apple.com/search?term=\(searchText)&limit=10"
+
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false, block: { (_) in
+
+            self.networkDataFetcher.fetchTracks(urlString: urlString) { (searchResponse) in
+                guard let searchResponse = searchResponse else { return }
+                self.searchResponse = searchResponse
+                
+                self.tableView.reloadData()
+            }
+        })
     }
 }
+

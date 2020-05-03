@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		F0247B7B245C04F5008EDDF3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0247B7A245C04F5008EDDF3 /* MainTabBarController.swift */; };
 		F0247B7D245C053B008EDDF3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0247B7C245C053B008EDDF3 /* SearchViewController.swift */; };
+		F04F3E66245D618D004FC856 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F3E65245D618D004FC856 /* NetworkService.swift */; };
+		F04F3E68245D66C2004FC856 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F3E67245D66C2004FC856 /* SearchResponse.swift */; };
+		F04F3E6D245D6C63004FC856 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F3E6C245D6C63004FC856 /* NetworkDataFetcher.swift */; };
 		F0FBA0102457F92E003B206B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBA00F2457F92E003B206B /* AppDelegate.swift */; };
 		F0FBA0122457F92E003B206B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBA0112457F92E003B206B /* SceneDelegate.swift */; };
 		F0FBA0172457F92E003B206B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0FBA0152457F92E003B206B /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 /* Begin PBXFileReference section */
 		F0247B7A245C04F5008EDDF3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F0247B7C245C053B008EDDF3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F04F3E65245D618D004FC856 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F04F3E67245D66C2004FC856 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		F04F3E6C245D6C63004FC856 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		F0FBA00C2457F92E003B206B /* View Controller Lyfecycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "View Controller Lyfecycle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FBA00F2457F92E003B206B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0FBA0112457F92E003B206B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +49,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F04F3E69245D66D7004FC856 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F04F3E65245D618D004FC856 /* NetworkService.swift */,
+				F04F3E6C245D6C63004FC856 /* NetworkDataFetcher.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F04F3E6A245D66E4004FC856 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F04F3E67245D66C2004FC856 /* SearchResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F04F3E6B245D66F4004FC856 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0FBA0232458004D003B206B /* SignUpViewController.swift */,
+				F0247B7A245C04F5008EDDF3 /* MainTabBarController.swift */,
+				F0247B7C245C053B008EDDF3 /* SearchViewController.swift */,
+				F0FBA025245802A5003B206B /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		F0FBA0032457F92E003B206B = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +98,9 @@
 			children = (
 				F0FBA00F2457F92E003B206B /* AppDelegate.swift */,
 				F0FBA0112457F92E003B206B /* SceneDelegate.swift */,
-				F0FBA0232458004D003B206B /* SignUpViewController.swift */,
-				F0247B7A245C04F5008EDDF3 /* MainTabBarController.swift */,
-				F0247B7C245C053B008EDDF3 /* SearchViewController.swift */,
-				F0FBA025245802A5003B206B /* ProfileViewController.swift */,
+				F04F3E69245D66D7004FC856 /* Services */,
+				F04F3E6A245D66E4004FC856 /* Models */,
+				F04F3E6B245D66F4004FC856 /* Controllers */,
 				F0FBA0152457F92E003B206B /* Main.storyboard */,
 				F0FBA0182457F932003B206B /* Assets.xcassets */,
 				F0FBA01A2457F932003B206B /* LaunchScreen.storyboard */,
@@ -151,8 +184,11 @@
 				F0FBA0102457F92E003B206B /* AppDelegate.swift in Sources */,
 				F0FBA0242458004D003B206B /* SignUpViewController.swift in Sources */,
 				F0247B7B245C04F5008EDDF3 /* MainTabBarController.swift in Sources */,
+				F04F3E68245D66C2004FC856 /* SearchResponse.swift in Sources */,
 				F0FBA026245802A5003B206B /* ProfileViewController.swift in Sources */,
+				F04F3E6D245D6C63004FC856 /* NetworkDataFetcher.swift in Sources */,
 				F0FBA0122457F92E003B206B /* SceneDelegate.swift in Sources */,
+				F04F3E66245D618D004FC856 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
