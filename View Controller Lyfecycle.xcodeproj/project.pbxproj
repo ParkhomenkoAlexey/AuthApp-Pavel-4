@@ -3,15 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E00184E6C46D0E9F7ABAFA87 /* Pods_View_Controller_Lyfecycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1F94205C7F99F83CFFA815 /* Pods_View_Controller_Lyfecycle.framework */; };
 		F0247B7B245C04F5008EDDF3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0247B7A245C04F5008EDDF3 /* MainTabBarController.swift */; };
 		F0247B7D245C053B008EDDF3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0247B7C245C053B008EDDF3 /* SearchViewController.swift */; };
 		F04F3E66245D618D004FC856 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F3E65245D618D004FC856 /* NetworkService.swift */; };
 		F04F3E68245D66C2004FC856 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F3E67245D66C2004FC856 /* SearchResponse.swift */; };
 		F04F3E6D245D6C63004FC856 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F3E6C245D6C63004FC856 /* NetworkDataFetcher.swift */; };
+		F09D99C624629CBD001319F8 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09D99C524629CBD001319F8 /* TrackCell.xib */; };
+		F09D99C924629DAE001319F8 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D99C824629DAE001319F8 /* TrackCell.swift */; };
 		F0FBA0102457F92E003B206B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBA00F2457F92E003B206B /* AppDelegate.swift */; };
 		F0FBA0122457F92E003B206B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBA0112457F92E003B206B /* SceneDelegate.swift */; };
 		F0FBA0172457F92E003B206B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0FBA0152457F92E003B206B /* Main.storyboard */; };
@@ -22,11 +25,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43596BF38A01EF51C19406E4 /* Pods-View Controller Lyfecycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-View Controller Lyfecycle.release.xcconfig"; path = "Target Support Files/Pods-View Controller Lyfecycle/Pods-View Controller Lyfecycle.release.xcconfig"; sourceTree = "<group>"; };
+		4A1F94205C7F99F83CFFA815 /* Pods_View_Controller_Lyfecycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_View_Controller_Lyfecycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0247B7A245C04F5008EDDF3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F0247B7C245C053B008EDDF3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F04F3E65245D618D004FC856 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F04F3E67245D66C2004FC856 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		F04F3E6C245D6C63004FC856 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		F09D99C524629CBD001319F8 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
+		F09D99C824629DAE001319F8 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		F0FBA00C2457F92E003B206B /* View Controller Lyfecycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "View Controller Lyfecycle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FBA00F2457F92E003B206B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0FBA0112457F92E003B206B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +43,7 @@
 		F0FBA01D2457F932003B206B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0FBA0232458004D003B206B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F0FBA025245802A5003B206B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F5AA986BF0EA74CE8DC925C3 /* Pods-View Controller Lyfecycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-View Controller Lyfecycle.debug.xcconfig"; path = "Target Support Files/Pods-View Controller Lyfecycle/Pods-View Controller Lyfecycle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,12 +51,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E00184E6C46D0E9F7ABAFA87 /* Pods_View_Controller_Lyfecycle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		123A082672BDAD96904D7909 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5AA986BF0EA74CE8DC925C3 /* Pods-View Controller Lyfecycle.debug.xcconfig */,
+				43596BF38A01EF51C19406E4 /* Pods-View Controller Lyfecycle.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		67D2DD19B53EF6DC69162B21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A1F94205C7F99F83CFFA815 /* Pods_View_Controller_Lyfecycle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F04F3E69245D66D7004FC856 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,11 +103,22 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		F09D99C724629CD5001319F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F09D99C524629CBD001319F8 /* TrackCell.xib */,
+				F09D99C824629DAE001319F8 /* TrackCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F0FBA0032457F92E003B206B = {
 			isa = PBXGroup;
 			children = (
 				F0FBA00E2457F92E003B206B /* View Controller Lyfecycle */,
 				F0FBA00D2457F92E003B206B /* Products */,
+				123A082672BDAD96904D7909 /* Pods */,
+				67D2DD19B53EF6DC69162B21 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +137,7 @@
 				F0FBA0112457F92E003B206B /* SceneDelegate.swift */,
 				F04F3E69245D66D7004FC856 /* Services */,
 				F04F3E6A245D66E4004FC856 /* Models */,
+				F09D99C724629CD5001319F8 /* Views */,
 				F04F3E6B245D66F4004FC856 /* Controllers */,
 				F0FBA0152457F92E003B206B /* Main.storyboard */,
 				F0FBA0182457F932003B206B /* Assets.xcassets */,
@@ -116,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0FBA0202457F932003B206B /* Build configuration list for PBXNativeTarget "View Controller Lyfecycle" */;
 			buildPhases = (
+				8F16F5BA3B2274FADC045E3B /* [CP] Check Pods Manifest.lock */,
 				F0FBA0082457F92E003B206B /* Sources */,
 				F0FBA0092457F92E003B206B /* Frameworks */,
 				F0FBA00A2457F92E003B206B /* Resources */,
+				08B6E47816A2C323F3F73E00 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,10 +210,53 @@
 				F0FBA01C2457F932003B206B /* LaunchScreen.storyboard in Resources */,
 				F0FBA0192457F932003B206B /* Assets.xcassets in Resources */,
 				F0FBA0172457F92E003B206B /* Main.storyboard in Resources */,
+				F09D99C624629CBD001319F8 /* TrackCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08B6E47816A2C323F3F73E00 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-View Controller Lyfecycle/Pods-View Controller Lyfecycle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-View Controller Lyfecycle/Pods-View Controller Lyfecycle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-View Controller Lyfecycle/Pods-View Controller Lyfecycle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F16F5BA3B2274FADC045E3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-View Controller Lyfecycle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F0FBA0082457F92E003B206B /* Sources */ = {
@@ -185,6 +268,7 @@
 				F0FBA0242458004D003B206B /* SignUpViewController.swift in Sources */,
 				F0247B7B245C04F5008EDDF3 /* MainTabBarController.swift in Sources */,
 				F04F3E68245D66C2004FC856 /* SearchResponse.swift in Sources */,
+				F09D99C924629DAE001319F8 /* TrackCell.swift in Sources */,
 				F0FBA026245802A5003B206B /* ProfileViewController.swift in Sources */,
 				F04F3E6D245D6C63004FC856 /* NetworkDataFetcher.swift in Sources */,
 				F0FBA0122457F92E003B206B /* SceneDelegate.swift in Sources */,
@@ -330,6 +414,7 @@
 		};
 		F0FBA0212457F932003B206B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5AA986BF0EA74CE8DC925C3 /* Pods-View Controller Lyfecycle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -348,6 +433,7 @@
 		};
 		F0FBA0222457F932003B206B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43596BF38A01EF51C19406E4 /* Pods-View Controller Lyfecycle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

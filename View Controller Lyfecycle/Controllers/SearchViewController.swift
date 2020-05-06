@@ -22,6 +22,13 @@ class SearchViewController: UIViewController {
         setupSearchBar()
         setupElements()
         setupConstraints()
+        
+        
+        self.networkDataFetcher.fetchTracks(urlString: "https://itunes.apple.com/search?term=billie&limit=30") { (searchResponse) in
+            guard let searchResponse = searchResponse else { return }
+            self.searchResponse = searchResponse
+            self.tableView.reloadData()
+        }
     }
     
     func setupSearchBar() {
@@ -36,7 +43,8 @@ extension SearchViewController {
     func setupElements() {
         view.backgroundColor = .white
         title = "Search"
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        let nib = UINib(nibName: "TrackCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: TrackCell.reuseId)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
@@ -65,20 +73,25 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let track = searchResponse?.results[indexPath.row]
-        cell.textLabel?.text = track?.trackName
+        let cell = tableView.dequeueReusableCell(withIdentifier: TrackCell.reuseId, for: indexPath) as! TrackCell
+        guard let track = searchResponse?.results[indexPath.row] else { return cell }
+        cell.set(track: track)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 84
     }
 }
 
+// MARK: - UISearchBarDelegate
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
-        let urlString = "https://itunes.apple.com/search?term=\(searchText)&limit=10"
+        let urlString = "https://itunes.apple.com/search?term=\(searchText)&limit=30&media=music"
 
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false, block: { (_) in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
 
             self.networkDataFetcher.fetchTracks(urlString: urlString) { (searchResponse) in
                 guard let searchResponse = searchResponse else { return }

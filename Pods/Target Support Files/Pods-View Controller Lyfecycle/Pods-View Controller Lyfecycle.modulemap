@@ -1,0 +1,6 @@
+framework module Pods_View_Controller_Lyfecycle {
+  umbrella header "Pods-View Controller Lyfecycle-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -158,7 +158,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Brh-af-djh">
-                                <rect key="frame" x="30" y="242" width="354" height="330"/>
+                                <rect key="frame" x="30" y="244" width="354" height="330"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pzy-c6-bbx">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
@@ -201,15 +201,13 @@
                                     <constraint firstItem="4i8-3P-EMH" firstAttribute="height" secondItem="Pzy-c6-bbx" secondAttribute="height" id="yKp-Pc-PRi"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UnD-z3-nQB">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UnD-z3-nQB">
                                 <rect key="frame" x="157" y="74" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="5yi-25-Vlb"/>
-                                    <constraint firstAttribute="width" constant="100" id="IGM-5G-udo"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rh-mT-yrG">
-                                <rect key="frame" x="186.5" y="182" width="41" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rh-mT-yrG">
+                                <rect key="frame" x="187" y="182" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Photo">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -217,26 +215,12 @@
                                     <action selector="photoButtonPressed:" destination="Lgv-pg-B19" eventType="touchUpInside" id="K4N-An-cRZ"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uy3-uX-eqG">
-                                <rect key="frame" x="16" y="60" width="100" height="100"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="DSL-jo-9M4"/>
-                                    <constraint firstAttribute="height" constant="100" id="OB7-7k-Pf0"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="8Rh-mT-yrG" firstAttribute="top" secondItem="UnD-z3-nQB" secondAttribute="bottom" constant="8" id="bHf-pa-tSB"/>
                             <constraint firstItem="dFM-aB-yyY" firstAttribute="trailing" secondItem="Brh-af-djh" secondAttribute="trailing" constant="30" id="cSU-TA-8Tm"/>
-                            <constraint firstItem="Brh-af-djh" firstAttribute="top" secondItem="8Rh-mT-yrG" secondAttribute="bottom" constant="30" id="gLX-Rd-6MR"/>
-                            <constraint firstItem="UnD-z3-nQB" firstAttribute="centerX" secondItem="S62-j8-JfW" secondAttribute="centerX" id="jL9-Gd-42C"/>
-                            <constraint firstItem="uy3-uX-eqG" firstAttribute="leading" secondItem="dFM-aB-yyY" secondAttribute="leading" constant="16" id="rnE-yF-UJc"/>
                             <constraint firstItem="Brh-af-djh" firstAttribute="leading" secondItem="dFM-aB-yyY" secondAttribute="leading" constant="30" id="sII-MO-JW8"/>
-                            <constraint firstItem="uy3-uX-eqG" firstAttribute="top" secondItem="dFM-aB-yyY" secondAttribute="top" constant="16" id="sWp-Wf-0FF"/>
-                            <constraint firstItem="8Rh-mT-yrG" firstAttribute="centerX" secondItem="S62-j8-JfW" secondAttribute="centerX" id="umJ-jZ-S7b"/>
-                            <constraint firstItem="UnD-z3-nQB" firstAttribute="top" secondItem="dFM-aB-yyY" secondAttribute="top" constant="30" id="xD4-0E-6Tm"/>
+                            <constraint firstItem="Brh-af-djh" firstAttribute="top" secondItem="dFM-aB-yyY" secondAttribute="top" constant="200" id="st0-Xe-4cD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dFM-aB-yyY"/>
                     </view>
@@ -294,6 +278,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
+        <image name="square.and.arrow.up" catalog="system" width="32" height="32"/>
     </resources>
 </document>
