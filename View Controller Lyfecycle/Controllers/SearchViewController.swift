@@ -23,12 +23,13 @@ class SearchViewController: UIViewController {
         setupElements()
         setupConstraints()
         
-        
-        self.networkDataFetcher.fetchTracks(urlString: "https://itunes.apple.com/search?term=billie&limit=30") { (searchResponse) in
+        self.networkDataFetcher.fetchTracks(urlString: "https://itunes.apple.com/search?term=billie&limit=7") { (searchResponse) in
             guard let searchResponse = searchResponse else { return }
             self.searchResponse = searchResponse
             self.tableView.reloadData()
         }
+        
+        
     }
     
     func setupSearchBar() {
@@ -81,6 +82,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 84
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let trackVC = TrackViewController()
+        present(trackVC, animated: true, completion: nil)
     }
 }
 

@@ -15,6 +15,7 @@
 		F04F3E6D245D6C63004FC856 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F3E6C245D6C63004FC856 /* NetworkDataFetcher.swift */; };
 		F09D99C624629CBD001319F8 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09D99C524629CBD001319F8 /* TrackCell.xib */; };
 		F09D99C924629DAE001319F8 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D99C824629DAE001319F8 /* TrackCell.swift */; };
+		F09D99CB2462B87B001319F8 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D99CA2462B87B001319F8 /* TrackViewController.swift */; };
 		F0FBA0102457F92E003B206B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBA00F2457F92E003B206B /* AppDelegate.swift */; };
 		F0FBA0122457F92E003B206B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBA0112457F92E003B206B /* SceneDelegate.swift */; };
 		F0FBA0172457F92E003B206B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0FBA0152457F92E003B206B /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		F04F3E6C245D6C63004FC856 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		F09D99C524629CBD001319F8 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		F09D99C824629DAE001319F8 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		F09D99CA2462B87B001319F8 /* TrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
 		F0FBA00C2457F92E003B206B /* View Controller Lyfecycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "View Controller Lyfecycle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FBA00F2457F92E003B206B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0FBA0112457F92E003B206B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				F0FBA0232458004D003B206B /* SignUpViewController.swift */,
 				F0247B7A245C04F5008EDDF3 /* MainTabBarController.swift */,
 				F0247B7C245C053B008EDDF3 /* SearchViewController.swift */,
+				F09D99CA2462B87B001319F8 /* TrackViewController.swift */,
 				F0FBA025245802A5003B206B /* ProfileViewController.swift */,
 			);
 			path = Controllers;
@@ -270,6 +273,7 @@
 				F04F3E68245D66C2004FC856 /* SearchResponse.swift in Sources */,
 				F09D99C924629DAE001319F8 /* TrackCell.swift in Sources */,
 				F0FBA026245802A5003B206B /* ProfileViewController.swift in Sources */,
+				F09D99CB2462B87B001319F8 /* TrackViewController.swift in Sources */,
 				F04F3E6D245D6C63004FC856 /* NetworkDataFetcher.swift in Sources */,
 				F0FBA0122457F92E003B206B /* SceneDelegate.swift in Sources */,
 				F04F3E66245D618D004FC856 /* NetworkService.swift in Sources */,
