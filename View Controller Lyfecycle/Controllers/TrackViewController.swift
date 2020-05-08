@@ -26,7 +26,7 @@ class TrackViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        set(track: Track(trackName: "bad guy", artistName: "Billie Eilish", collectionName: "WHERE ARE YOU", artworkUrl60: nil))
+        set(track: Track(trackName: "bad guy", artistName: "Billie Eilish", collectionName: "WHERE ARE YOU GO", artworkUrl60: nil))
         setupElements()
         setupConstraints()
     }
@@ -43,7 +43,9 @@ class TrackViewController: UIViewController {
 extension TrackViewController {
     func setupElements() {
         view.backgroundColor = .white
-        
+        dragDownButton.setImage(#imageLiteral(resourceName: "Drag Down"), for: .normal)
+//        dragDownButton.translatesAutoresizingMaskIntoConstraints = false
+//        trackImageView.translatesAutoresizingMaskIntoConstraints = false
     }
 }
 
@@ -51,6 +53,21 @@ extension TrackViewController {
 extension TrackViewController {
     func setupConstraints() {
         
+        
+        let stackView = UIStackView(arrangedSubviews: [dragDownButton, trackImageView])
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        trackImageView.heightAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        view.addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            
+        ])
         
     }
 }
