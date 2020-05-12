@@ -44,8 +44,25 @@ extension TrackViewController {
     func setupElements() {
         view.backgroundColor = .white
         dragDownButton.setImage(#imageLiteral(resourceName: "Drag Down"), for: .normal)
-//        dragDownButton.translatesAutoresizingMaskIntoConstraints = false
-//        trackImageView.translatesAutoresizingMaskIntoConstraints = false
+        currentSecondsLabel.text = "00:00"
+        timeLeftLabel.text = "--:--"
+        
+        timeLeftLabel.textAlignment = .right
+        trackNameLabel.textAlignment = .center
+        artistNameLabel.textAlignment = .center
+        
+        trackNameLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        artistNameLabel.textColor = #colorLiteral(red: 0.9098039216, green: 0.2705882353, blue: 0.3529411765, alpha: 1)
+        
+        previousTrackButton.setImage(#imageLiteral(resourceName: "Left"), for: .normal)
+        startStopButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+        nextTrackButton.setImage(#imageLiteral(resourceName: "Right"), for: .normal)
+        
+        offVolumeImageView.image = #imageLiteral(resourceName: "Icon Min")
+        onVolumeImageView.image = #imageLiteral(resourceName: "IconMax")
+        
+        offVolumeImageView.contentMode = .scaleAspectFit
+        onVolumeImageView.contentMode = .scaleAspectFit
     }
 }
 
@@ -54,21 +71,54 @@ extension TrackViewController {
     func setupConstraints() {
         
         
-        let stackView = UIStackView(arrangedSubviews: [dragDownButton, trackImageView])
-        stackView.axis = .vertical
-        stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let topImageStackView = UIStackView(arrangedSubviews: [dragDownButton, trackImageView], axis: .vertical, spacing: 16)
         
-        trackImageView.heightAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
-        view.addSubview(stackView)
+        let labelsStackView = UIStackView(arrangedSubviews: [currentSecondsLabel, timeLeftLabel], axis: .horizontal, spacing: 0)
+        labelsStackView.distribution = .fillEqually
+        let topSliderStackView = UIStackView(arrangedSubviews: [slider, labelsStackView], axis: .vertical, spacing: 4)
         
+        let trackInfoStackView = UIStackView(arrangedSubviews: [trackNameLabel, artistNameLabel], axis: .vertical, spacing: 4)
+        
+        let buttonsStackView = UIStackView(arrangedSubviews: [previousTrackButton, startStopButton, nextTrackButton], axis: .horizontal, spacing: 0)
+        buttonsStackView.distribution = .fillEqually
+        buttonsStackView.alignment = .center
+        buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let volimeStackView = UIStackView(arrangedSubviews: [offVolumeImageView, volumeSlider, onVolumeImageView], axis: .horizontal, spacing: 10)
+        volimeStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let topStackView = UIStackView(arrangedSubviews: [topImageStackView, topSliderStackView, trackInfoStackView, buttonsStackView], axis: .vertical, spacing: 8)
+        topStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(topStackView)
+        view.addSubview(buttonsStackView)
+        view.addSubview(volimeStackView)
+        
+        trackImageView.heightAnchor.constraint(equalTo: topImageStackView.widthAnchor).isActive = true
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            topStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            topStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            topStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)
             
         ])
         
+        NSLayoutConstraint.activate([
+            buttonsStackView.topAnchor.constraint(equalTo: topStackView.bottomAnchor, constant: 16),
+            buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            buttonsStackView.bottomAnchor.constraint(equalTo: volimeStackView.topAnchor, constant: -24)
+            
+        ])
+        
+        offVolumeImageView.heightAnchor.constraint(equalToConstant: 17).isActive = true
+        offVolumeImageView.widthAnchor.constraint(equalToConstant: 17).isActive = true
+        onVolumeImageView.heightAnchor.constraint(equalToConstant: 17).isActive = true
+        onVolumeImageView.widthAnchor.constraint(equalToConstant: 17).isActive = true
+        NSLayoutConstraint.activate([
+            volimeStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
+            volimeStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            volimeStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+        ])
     }
 }
 

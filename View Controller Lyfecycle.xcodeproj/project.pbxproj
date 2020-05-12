@@ -13,6 +13,7 @@
 		F04F3E66245D618D004FC856 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F3E65245D618D004FC856 /* NetworkService.swift */; };
 		F04F3E68245D66C2004FC856 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F3E67245D66C2004FC856 /* SearchResponse.swift */; };
 		F04F3E6D245D6C63004FC856 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F3E6C245D6C63004FC856 /* NetworkDataFetcher.swift */; };
+		F06E32C6246A7C0D0035F702 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E32C5246A7C0D0035F702 /* StackView + Extension.swift */; };
 		F09D99C624629CBD001319F8 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09D99C524629CBD001319F8 /* TrackCell.xib */; };
 		F09D99C924629DAE001319F8 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D99C824629DAE001319F8 /* TrackCell.swift */; };
 		F09D99CB2462B87B001319F8 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D99CA2462B87B001319F8 /* TrackViewController.swift */; };
@@ -33,6 +34,7 @@
 		F04F3E65245D618D004FC856 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F04F3E67245D66C2004FC856 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		F04F3E6C245D6C63004FC856 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		F06E32C5246A7C0D0035F702 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
 		F09D99C524629CBD001319F8 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		F09D99C824629DAE001319F8 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		F09D99CA2462B87B001319F8 /* TrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				F04F3E6A245D66E4004FC856 /* Models */,
 				F09D99C724629CD5001319F8 /* Views */,
 				F04F3E6B245D66F4004FC856 /* Controllers */,
+				F06E32C5246A7C0D0035F702 /* StackView + Extension.swift */,
 				F0FBA0152457F92E003B206B /* Main.storyboard */,
 				F0FBA0182457F932003B206B /* Assets.xcassets */,
 				F0FBA01A2457F932003B206B /* LaunchScreen.storyboard */,
@@ -269,6 +272,7 @@
 				F0247B7D245C053B008EDDF3 /* SearchViewController.swift in Sources */,
 				F0FBA0102457F92E003B206B /* AppDelegate.swift in Sources */,
 				F0FBA0242458004D003B206B /* SignUpViewController.swift in Sources */,
+				F06E32C6246A7C0D0035F702 /* StackView + Extension.swift in Sources */,
 				F0247B7B245C04F5008EDDF3 /* MainTabBarController.swift in Sources */,
 				F04F3E68245D66C2004FC856 /* SearchResponse.swift in Sources */,
 				F09D99C924629DAE001319F8 /* TrackCell.swift in Sources */,
